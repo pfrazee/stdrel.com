@@ -35,7 +35,7 @@ host\links\setheader('transformer');
 					<pre><code class="language-javascript">importScripts('/local.min.js');
 	function main(req, res) {
 	  // Set headers
-	  res.header('Link', [{ href: '/', rel: 'self httplocal.com/transformer', title: 'To Uppercase' }]);
+	  res.header('Link', [{ href: '/', rel: 'self stdrel.com/transformer', title: 'To Uppercase' }]);
 	  res.header('Content-Type', 'text/plain');
 
 	  if (req.method == 'HEAD') {
