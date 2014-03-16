@@ -25,6 +25,7 @@ namespace com\stdrel\partials {
 		<div id="reltypes-nav">
 			<ul class="list-inline">
 				<li <?=\partials\isactive($current=='rel')?>><a href="http://stdrel.com/rel">stdrel.com/rel</a><br><small>Relation Type</small>
+				<li <?=\partials\isactive($current=='media')?>><a href="http://stdrel.com/media">stdrel.com/media</a><br><small>Media</small>
 				<li <?=\partials\isactive($current=='transformer')?>><a href="http://stdrel.com/transformer">stdrel.com/transformer</a><br><small>Stream Transformer</small>
 			</ul>
 		</div>

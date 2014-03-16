@@ -22,8 +22,9 @@ namespace com\stdrel\links {
 	function setheader($current) {
 		$links = array(
 			// Static pages
-			'reltypes'    => array('href'=>'http://stdrel.com/',            'rel'=>'item collection',     'id'=>'reltypes', 'title'=>'stdrel - Web Relation Types'),
-			'rel'         => array('href'=>'http://stdrel.com/rel',         'rel'=>'item stdrel.com/rel', 'id'=>'rel',  'title'=>'Relation Type'),
+			'reltypes'    => array('href'=>'http://stdrel.com/',            'rel'=>'item collection',     'id'=>'reltypes',    'title'=>'stdrel - Web Relation Types'),
+			'rel'         => array('href'=>'http://stdrel.com/rel',         'rel'=>'item stdrel.com/rel', 'id'=>'rel',         'title'=>'Relation Type'),
+			'media'       => array('href'=>'http://stdrel.com/media',       'rel'=>'item stdrel.com/rel', 'id'=>'media',       'title'=>'Media'),
 			'transformer' => array('href'=>'http://stdrel.com/transformer', 'rel'=>'item stdrel.com/rel', 'id'=>'transformer', 'title'=>'Stream Transformer'),
 		);
 		$links['reltypes']['rel'] .= 'via service'; // add toplevel rels
