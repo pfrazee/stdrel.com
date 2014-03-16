@@ -1,0 +1,48 @@
+#frontpage { min-width: 640px; }
+#frontpage h1, #frontpage h3 { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #555; }
+#frontpage h1 { font-size: 45px; font-weight: bold; }
+#frontpage h2 { border-bottom: 0; margin-bottom: 0; font-weight: bold; }
+#frontpage h3 { font-size: 26px; font-weight: normal; line-height: 24px; margin-top: 8px; }
+#frontpage .hilite { color: #78976a; font-weight: normal; }
+#frontpage .bigger { font-size: 16px; color: #777; line-height: 24px; }
+#frontpage .left { width: 760px; float: left; }
+#frontpage .left p.lead1 { font-size: 33px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #555; }
+#frontpage .left p.lead2 { font-size: 26px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #555; }
+#frontpage .right { width: 400px; padding-left: 800px; }
+#frontpage .pushdown { padding-top: 50px; }
+#frontpage .pushdown2 { padding-top: 120px; }
+#frontpage .explanations td { vertical-align: top; }
+#frontpage .explanations td:first-child { width: 20px; }
+#frontpage .explanations td p { margin-top: 0; }
+#frontpage .answer { color: #555; font-size: 17.5px; }
+@media (max-width: 1300px) {
+	#frontpage { padding-top: 10px }
+	#frontpage .left { float: none; width: auto; }
+	#frontpage .right { padding-left: 0; width: auto; margin-top: 30px; }
+	#frontpage .pushdown, #frontpage .pushdown2 { padding-top: 0; }
+}
+
+#about h2 { float: right; width: 30%; margin: 0; font-size: 26px; border-bottom: 0; color: #ccc; }
+#about .section { width: 70%; }
+#about .section > div { padding: 0 30px 20px 0 }
+#about .section > div > p:first-child { margin-top: 0 }
+@media (max-width: 1300px) {
+	#about .section { width: 100%; }
+}
+
+#about .notice { padding: 10px 100px 10px 30px; }
+
+#apps .app img.thumb { float: left; border: 1px solid #aaa; }
+#apps .app .desc { margin-left: 320px; }
+
+#download code { color: #333; }
+
+#reltype-sidebar ul { list-style: none; margin: 0; border-right: 1px solid #ddd; }
+#reltype-sidebar ul li { margin-bottom: 10px; padding: 0 5px 0 10px; }
+#reltype-sidebar ul li.active { background: #f0f0f0; }
+
+#blog-sidebar ul { list-style: none; margin: 0; border-right: 1px solid #ddd; }
+#blog-sidebar ul li { margin-bottom: 10px; padding: 0 5px 0 10px; }
+#blog-sidebar ul li.active { background: #f0f0f0; }
+
+#blog-index h2 { border-bottom: 0; }
