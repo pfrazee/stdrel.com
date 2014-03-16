@@ -23,11 +23,11 @@ host\links\setheader('transformer');
 				<div class="content">
 					<h2>stdrel.com/transformer <small>Stream Transformer</small></h2>
 					<p>A resource for applying transformations for streams of text. Similar in nature to Unix's STDIO interface.</p>
-					<p>Resources which export this type MUST:</p>
+					<p>Resources which export this type <strong>MUST</strong>:</p>
 					<ul>
 						<li>Support the <code>POST</code> method with Content-Type of <code>text/plain</code> and an Accept of <code>text/plain</code>.</li>
 					</ul>
-					<p>Resources which export this type SHOULD:</p>
+					<p>Resources which export this type <strong>SHOULD</strong>:</p>
 					<ul>
 						<li>Stream response chunks as soon as they are delivered by the request stream, when supported by the protocol (HTTPL).</li>
 					</ul>

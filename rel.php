@@ -23,7 +23,7 @@ host\links\setheader('rel');
 				<div class="content">
 					<h2>stdrel.com/rel <small>Relation Type</small></h2>
 					<p>The resource is a relation type.</p>
-					<p>Resources which export this type SHOULD:</p>
+					<p>Resources which export this type <strong>SHOULD</strong>:</p>
 					<ul>
 						<li>Support the <code>GET</code> method with Accept of <code>text/plain</code> and/or <code>text/html</code>, responding with documentation for the reltype's semantics and behaviors.</li>
 					</ul>
