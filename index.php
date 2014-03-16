@@ -36,24 +36,24 @@ host\links\setheader('reltypes');
 						response header. Clients send HEAD requests to hosts and search the Link header entries according to their attirbutes. By testing the relation types,
 						the clients determine the semantics of the link and the expected behaviors of the link's reference.</p>
 					<pre><code class="language-javascript">// Example 1
-	local.agent('http://knownhost.com')
-	  .follow({ rel: 'stdrel.com/user', id: 'bob' })
-	  .PATCH({ avatar: 'cowboy' });</code></pre>
+local.agent('http://knownhost.com')
+  .follow({ rel: 'stdrel.com/user', id: 'bob' })
+  .PATCH({ avatar: 'cowboy' });</code></pre>
 	<pre>Traffic with knownhost.com:
-	<span style="color: #045AC7">&rarr; HEAD / HTTP/1.1</span>
-	<span style="color: #905">&larr; HTTP/1.1 200 Ok</span>
-	<span style="color: #905">&larr; Link: &lt;http://knownhost.com&gt;; rel="self service stdrel.com", &lt;http://knownhost.com/users/{id}&gt;; rel="item stdrel.com/user"</span>
-	<span style="color: #045AC7">&rarr; PATCH /users/bob HTTP/1.1 ...</span></pre>
+<span style="color: #045AC7">&rarr; HEAD / HTTP/1.1</span>
+<span style="color: #905">&larr; HTTP/1.1 200 Ok</span>
+<span style="color: #905">&larr; Link: &lt;http://knownhost.com&gt;; rel="self service stdrel.com", &lt;http://knownhost.com/users/{id}&gt;; rel="item stdrel.com/user"</span>
+<span style="color: #045AC7">&rarr; PATCH /users/bob HTTP/1.1 ...</span></pre>
 	  				<p>We know the PATCH will succeed because the destination's link exported the <a href="/user">stdrel.com/user</a> relation type, which
 	  					defines a PATCH method with the semantics used in the example. This allows use to generalize clients away from specific hosts.</p>
 					<pre><code class="language-javascript">// Example 2
-	function setUserAvatar(host, user, avatar) {
-	  local.agent(host)
-	    .follow({ rel: 'stdrel.com/user', id: user })
-	    .patch({ avatar: avatar });
-	}
-	setUserAvatar('http://knownhost.com', 'bob', 'cowboy');
-	setUserAvatar('http://anotherhost.com', 'alice', 'astronaut');</code></pre>
+function setUserAvatar(host, user, avatar) {
+  local.agent(host)
+    .follow({ rel: 'stdrel.com/user', id: user })
+    .patch({ avatar: avatar });
+}
+setUserAvatar('http://knownhost.com', 'bob', 'cowboy');
+setUserAvatar('http://anotherhost.com', 'alice', 'astronaut');</code></pre>
 					<p>If the given host does not provide a <a href="/user">rel="stdrel.com/user"</a> link, the client will fail before sending the PATCH request with a
 						status 1 Link Not Found.</p>
 					<?/*<p>Notice also in <em>Example 1</em> that a template token <code>{id}</code> is used in the user link. Local.js uses
