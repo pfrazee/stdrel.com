@@ -15,7 +15,7 @@ h3 { font-size:20px }
 #header h1 small, #header h1 a { color: white; }
 
 #reltypes-nav ul { margin: 0; }
-#reltypes-nav ul li { margin: 20px 20px 0; }
+#reltypes-nav ul li { margin: 20px; }
 #reltypes-nav ul li.active { font-weight: bold; }
 
 #reltype h2 { background: #e0e0e0; padding: 5px 10px; border-radius: 3px; }
