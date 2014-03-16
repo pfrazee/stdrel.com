@@ -1,27 +1,37 @@
 <?
 require('inc/index.php');
-use io\gwr as host;
+use com\stdrel as host;
 host\links\setheader('rel');
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<title>gwr.io/rel: Relation Type</title>
+		<title>stdrel.com/rel - Relation Type</title>
 		<?= partials\styles() ?>
+		<?= partials\syntaxhighlighter() ?>
 	</head>
 
 	<body>
-		<?= host\partials\header('rel') ?>
+		<div id="footer-wrapper-helper">
+			<?= host\partials\header('rel') ?>
+			<?= host\partials\reltypes_nav('rel') ?>
 
-		<div id="reltype" class="twocolumnpage">
-			<?= host\partials\sidebar('rel') ?>
-			<div class="content">
-				<h1>gwr.io/rel <small>Relation Type</small></h1>
-				<p>The resource is a relation type.</p>
-				<p><em>The resource has no defined behaviors.</em></p>
+			<div id="reltype" class="twocolumnpage">
+				<div class="sidebar">
+				</div>
+				<div class="content">
+					<h2>stdrel.com/rel <small>Relation Type</small></h2>
+					<p>The resource is a relation type.</p>
+					<p>Resources which export this type SHOULD:</p>
+					<ul>
+						<li>Support the <code>GET</code> method with Accept of <code>text/plain</code> and/or <code>text/html</code>, responding with documentation for the reltype's semantics and behaviors.</li>
+					</ul>
+					<br><br>
+				</div>
 			</div>
+			<div id="footer-wrapper-push"></div>
 		</div>
+		<?= host\partials\footer() ?>
 	</body>
 </html>
-

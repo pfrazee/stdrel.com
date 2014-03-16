@@ -1,0 +1,57 @@
+html, body { height: 100%; }
+body { color: #555; font-family: 'Roboto', sans-serif; font-weight: 300; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; }
+pre, code { font-family: Consolas, "Courier New", monospace; color: #5E5E5E; background: none; border: 0; }
+p { margin: 13px 0 17px; font-size: 16px; line-height: 21px; }
+blockquote { border-left: 5px solid #ddd; }
+blockquote p { font-size:14px }
+h2 { font-size:30px; }
+h3 { font-size:20px }
+
+#header { width: 100%; height: 100px; background: url(/assets/img/header.jpg); box-shadow: 0px 5px 15px rgba(0,0,0,0.25); }
+#header img { float: left; height: 80px; margin: 14px 5px 0; }
+#header h1 { margin-top: 0; padding: 42px 75px 0; }
+#header h1 a { font-weight: bold; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif }
+#header h1 small, #header h1 a { color: white; }
+
+#reltypes-nav ul { margin: 0; }
+#reltypes-nav ul li { margin: 20px 20px 0; }
+#reltypes-nav ul li.active { font-weight: bold; }
+
+#reltype h2 { background: #e0e0e0; padding: 5px 10px; border-radius: 3px; }
+#reltype h2 small { color: #777; }
+
+/*
+body { color: #555; font-family: Arial, sans-serif; }
+pre, code { font-family: Consolas, "Courier New", monospace; color: #5E5E5E; }
+a { color: #3184D6; }
+p { margin: 13px 0 17px; }
+blockquote { border-left: 5px solid #ddd; }
+blockquote p { font-size:14px }
+h2 { font-size:30px; border-bottom:1px solid gray; font-weight:normal; margin-top:16px }
+h3 { font-size:20px }
+
+#header { margin: 5px 10px 20px; border-bottom: 1px solid #eee; height: 81px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif }
+#header img { padding-right: 27px; vertical-align: top; }
+#header span { position: relative; top: 27px; margin-right: 40px; font-size: 18px; }
+#header span.right { float: right; }
+#header span a { color: gray; }
+#header a.active { color: rgb(125, 146, 115); text-decoration: underline; }*/
+
+.stdpage { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.twocolumnpage { padding: 0; }
+.twocolumnpage .sidebar { width: 180px; float: left; }
+.twocolumnpage .content { margin: 30px 40px 0 220px; max-width: 960px; }
+#footer-wrapper-helper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -60px; }
+#footer-wrapper-push, #footer { height: 60px; }
+#footer hr { margin-top: 0; }
+#footer ul { text-align: center; }
+@media (max-width: 1300px) {
+	.stdpage { background: rgba(255,255,255,0.75); }
+	.twocolumnpage { margin-top: 40px; padding: 0; }
+	.twocolumnpage .sidebar { width: 180px; float: left; }
+	.twocolumnpage .content { margin: 30px 20px 0 200px; max-width: 960px; }
+}
+
+.schema ul { list-style: none; margin-bottom: 0; }
+.u { text-decoration: underline }
