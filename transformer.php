@@ -7,7 +7,7 @@ host\links\setheader('transformer');
 <!doctype html>
 <html>
 	<head>
-		<title>stdrel.com/transformer - Stream Transformer</title>
+		<title>/transformer - Stream Transformer</title>
 		<?= partials\styles() ?>
 		<?= partials\syntaxhighlighter() ?>
 	</head>

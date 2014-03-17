@@ -7,7 +7,7 @@ host\links\setheader('media');
 <!doctype html>
 <html>
 	<head>
-		<title>stdrel.com/media - Media</title>
+		<title>/media - Media</title>
 		<?= partials\styles() ?>
 		<?= partials\syntaxhighlighter() ?>
 	</head>

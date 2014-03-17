@@ -27,6 +27,8 @@ namespace com\stdrel\partials {
 				<li <?=\partials\isactive($current=='rel')?>><a href="http://stdrel.com/rel">stdrel.com/rel</a><br><small>Relation Type</small>
 				<li <?=\partials\isactive($current=='media')?>><a href="http://stdrel.com/media">stdrel.com/media</a><br><small>Media</small>
 				<li <?=\partials\isactive($current=='transformer')?>><a href="http://stdrel.com/transformer">stdrel.com/transformer</a><br><small>Stream Transformer</small>
+				<li <?=\partials\isactive($current=='crud-coll')?>><a href="http://stdrel.com/crud-coll">stdrel.com/crud-coll</a><br><small>CRUD Collection <strong>draft</strong></small>
+				<li <?=\partials\isactive($current=='crud-item')?>><a href="http://stdrel.com/crud-item">stdrel.com/crud-item</a><br><small>CRUD Item <strong>draft</strong></small>
 			</ul>
 		</div>
 	<? }

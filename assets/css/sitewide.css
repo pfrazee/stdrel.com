@@ -2,6 +2,7 @@ html, body { height: 100%; }
 body { color: #555; font-family: 'Roboto', sans-serif; font-weight: 300; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; }
 pre, code { font-family: Consolas, "Courier New", monospace; color: #5E5E5E; background: none; border: 0; }
+code { background: #eee; }
 p { margin: 13px 0 17px; font-size: 16px; line-height: 21px; }
 blockquote { border-left: 5px solid #ddd; }
 blockquote p { font-size:14px }
@@ -41,7 +42,7 @@ h3 { font-size:20px }
 .stdpage { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 .twocolumnpage { padding: 0; }
 .twocolumnpage .sidebar { width: 180px; float: left; }
-.twocolumnpage .content { margin: 30px 40px 0 220px; max-width: 960px; }
+.twocolumnpage .content { margin: 30px 40px 30px 220px; max-width: 960px; }
 #footer-wrapper-helper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -60px; }
 #footer-wrapper-push, #footer { height: 60px; }
 #footer hr { margin-top: 0; }
@@ -50,8 +51,8 @@ h3 { font-size:20px }
 	.stdpage { background: rgba(255,255,255,0.75); }
 	.twocolumnpage { margin-top: 40px; padding: 0; }
 	.twocolumnpage .sidebar { width: 180px; float: left; }
-	.twocolumnpage .content { margin: 30px 20px 0 200px; max-width: 960px; }
+	.twocolumnpage .content { margin: 30px 20px 30px 200px; max-width: 960px; }
 }
 
-.schema ul { list-style: none; margin-bottom: 0; }
+.schema, .schema ul { list-style: none; margin-bottom: 0; }
 .u { text-decoration: underline }
