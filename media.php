@@ -17,17 +17,15 @@ host\links\setheader('media');
 			<?= host\partials\header('media') ?>
 			<?= host\partials\reltypes_nav('media') ?>
 
-			<div id="reltype" class="twocolumnpage">
-				<div class="sidebar">
-				</div>
+			<div id="reltype" class="stdpage">
 				<div class="content">
 					<h2>stdrel.com/media <small>Media</small></h2>
 					<p>The resource is an image, video, audio, or text document.</p>
-					<p>Links which export this type <strong>MUST</strong>:</p>
+					<p><b class="glyphicon glyphicon-flag text-danger"></b> Links which export this type <strong>MUST</strong>:</p>
 					<ul>
 						<li>Include a `type` attribute labeling the mimetype of the content.</li>
 					</ul>
-					<p>Resources which export this type <strong>MUST</strong>:</p>
+					<p><b class="glyphicon glyphicon-flag text-danger"></b> Resources which export this type <strong>MUST</strong>:</p>
 					<ul>
 						<li>Support the <code>GET</code> method with Accept of the type given by the link <code>type</code>, responding with the media document.</li>
 					</ul>

@@ -18,7 +18,7 @@ namespace com\stdrel\partials {
 	function header($current) { ?>
 		<div id="header">
 			<img src="/assets/img/icon-network.png">
-			<h1><a href="http://stdrel.com">stdrel</a> <small>web relation types library</small></h1>
+			<h1><a href="http://stdrel.com">stdrel</a> <small>web reltypes library</small></h1>
 		</div>
 	<? }
 	function reltypes_nav($current) { ?>

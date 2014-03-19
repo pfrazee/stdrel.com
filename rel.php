@@ -17,13 +17,11 @@ host\links\setheader('rel');
 			<?= host\partials\header('rel') ?>
 			<?= host\partials\reltypes_nav('rel') ?>
 
-			<div id="reltype" class="twocolumnpage">
-				<div class="sidebar">
-				</div>
+			<div id="reltype" class="stdpage">
 				<div class="content">
 					<h2>stdrel.com/rel <small>Relation Type</small></h2>
 					<p>The resource is a relation type.</p>
-					<p>Resources which export this type <strong>SHOULD</strong>:</p>
+					<p><b class="glyphicon glyphicon-flag text-danger"></b> Resources which export this type <strong>SHOULD</strong>:</p>
 					<ul>
 						<li>Support the <code>GET</code> method with Accept of <code>text/plain</code> and/or <code>text/html</code>, responding with documentation for the reltype's semantics and behaviors.</li>
 					</ul>

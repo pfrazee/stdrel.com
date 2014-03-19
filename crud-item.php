@@ -17,13 +17,11 @@ host\links\setheader('crud-item');
 			<?= host\partials\header('crud-item') ?>
 			<?= host\partials\reltypes_nav('crud-item') ?>
 
-			<div id="reltype" class="twocolumnpage">
-				<div class="sidebar">
-				</div>
+			<div id="reltype" class="stdpage">
 				<div class="content">
 					<h2>stdrel.com/crud-item <small>CRUD Item <strong>draft status - may change without notice</strong></small></h2>
 					<p>The resource is a item within a resource of type <a href="/crud-coll">stdrel.com/crud-coll</a>.</p>
-					<p>Resources which export this type <strong>MUST</strong>:</p>
+					<p><b class="glyphicon glyphicon-flag text-danger"></b> Resources which export this type <strong>MUST</strong>:</p>
 					<ul>
 						<li>In the <code>Link</code> response header, include a link of type <a href="/crud-coll">stdrel.com/crud-coll</a> to refer to the item's
 							parent-resource.</li>
@@ -36,25 +34,27 @@ host\links\setheader('crud-item');
 							<li>If the request is valid, removes the resource from the collection. Responds <code>204 No Content</code>.</li>
 						</ul></li>
 					</ul>
-					<p>Resources which export this type <strong>SHOULD</strong>:</p>
+					<p><b class="glyphicon glyphicon-flag text-warning"></b> Resources which export this type <strong>SHOULD</strong>:</p>
 					<ul>
 						<li>In a <code>422 Unprocessable Entity</code> response, include a <code>Bad Entity Document</code> in the response body.</li>
 					</ul>
-					<hr>
-					<p><strong>Bad Entity Document</strong></p>
-					<p>This document describes the invalid values or structure in a POSTed entity. It mimics the structure of the submitted entity, and provides
-						error descriptions for the "bad" values in the POST body. It <strong>MAY-</strong> be provided in any mimetype <strong>-IF</strong> its parsed
-						structure follows the following schema:</p>
-					<ul class="schema">
-						<li><code>errors</code> <strong>object</strong> The object containing error descriptions.<ul>
-							<li><code>[entity-attr-1]</code> <strong>string</strong> An error description for an attribute in the POSTed entity.</li>
-							<li><code>[entity-attr-2]</code> <strong>object</strong> An object containing error descriptions for sub-attributes.</li>
-							<li>...</li>
-							<li><code>[entity-attr-N]</code> <strong>string</strong></li>
-						</ul></li>
-					</ul>
-					<p>An example of the Bad Entity Document:</p>
-					<pre>{
+					<br><br>
+					<div class="panel panel-default">
+						<div class="panel-heading"><h3 class="panel-title">Bad Entity Document</h3></div>
+						<div class="panel-body">
+						<p>This document describes the invalid values or structure in a POSTed entity. It mimics the structure of the submitted entity, and provides
+							error descriptions for the "bad" values in the POST body. It <strong>MAY-</strong> be provided in any mimetype <strong>-IF</strong> its parsed
+							structure follows the following schema:</p>
+						<ul class="schema">
+							<li><code>errors</code> <strong>object</strong> The object containing error descriptions.<ul>
+								<li><code>[entity-attr-1]</code> <strong>string</strong> An error description for an attribute in the POSTed entity.</li>
+								<li><code>[entity-attr-2]</code> <strong>object</strong> An object containing error descriptions for sub-attributes.</li>
+								<li>...</li>
+								<li><code>[entity-attr-N]</code> <strong>string</strong></li>
+							</ul></li>
+						</ul>
+						<p>An example of the Bad Entity Document:</p>
+						<pre><code class="language-javascript">{
   "errors": {
     "username": "Required.",
     "password": "Must contain 1 letter and 1 number.",
@@ -64,7 +64,9 @@ host\links\setheader('crud-item');
       "year": "Must be an integer between 1900 and 2100."
     }
   }
-}</pre>
+}</code></pre>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div id="footer-wrapper-push"></div>

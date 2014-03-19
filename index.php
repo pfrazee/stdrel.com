@@ -7,7 +7,7 @@ host\links\setheader('reltypes');
 <!doctype html>
 <html>
 	<head>
-		<title>stdrel - Web Relation Types Library</title>
+		<title>stdrel - Web Reltypes Library</title>
 		<?= partials\styles() ?>
 		<?= partials\syntaxhighlighter() ?>
 	</head>
@@ -21,42 +21,36 @@ host\links\setheader('reltypes');
 				<div class="sidebar">
 				</div>
 				<div class="content">
-					<h3>What are reltypes?</h3>
-					<blockquote>
-						<p>A link relation type identifies the semantics
-							of a link.  For example, a link with the relation type "copyright"
-							indicates that the resource identified by the link is a
-							statement of the copyright terms applying to the current location.</p>
-						<p>Link relation types can also be used to indicate that the target
-							resource has particular attributes, or exhibits particular
-							behaviours.</p>
-						<small><a href="http://tools.ietf.org/html/rfc5988#section-4">RFC 5988</a></small>
-					</blockquote>
-					<p>Relation types identify what a URL is and what it can do. They are included in links under the <code>rel</code> attribute, and are often used in the Link
-						response header. Clients send HEAD requests to hosts and search the Link header entries according to their attirbutes. By testing the relation types,
-						the clients determine the semantics of the link and the expected behaviors of the link's reference.</p>
-					<pre><code class="language-javascript">// Example 1
-local.agent('http://knownhost.com')
-  .follow({ rel: 'stdrel.com/user', id: 'bob' })
-  .PATCH({ avatar: 'cowboy' });</code></pre>
-	<pre>Traffic with knownhost.com:
-<span style="color: #045AC7">&rarr; HEAD / HTTP/1.1</span>
-<span style="color: #905">&larr; HTTP/1.1 200 Ok</span>
-<span style="color: #905">&larr; Link: &lt;http://knownhost.com&gt;; rel="self service", &lt;http://knownhost.com/users/{id}&gt;; rel="item stdrel.com/user"</span>
-<span style="color: #045AC7">&rarr; PATCH /users/bob HTTP/1.1 ...</span></pre>
-	  				<p>We know the <code>PATCH</code> will succeed because the destination's link exported the <code>stdrel.com/user</code> relation type, which
-	  					defines a <code>PATCH</code> method with the semantics used in the example. (It doesn't really exist, but, if it did, it would.) This allows us to generalize
-	  					clients away from specific hosts.</p>
-					<pre><code class="language-javascript">// Example 2
-function setUserAvatar(host, user, avatar) {
-  local.agent(host)
-    .follow({ rel: 'stdrel.com/user', id: user })
-    .patch({ avatar: avatar });
-}
-setUserAvatar('http://knownhost.com', 'bob', 'cowboy');
-setUserAvatar('http://anotherhost.com', 'alice', 'astronaut');</code></pre>
-					<p>If the given host does not provide a <code>rel="stdrel.com/user"</code> link, the client will fail before sending the PATCH request with a
-						status 1 Link Not Found.</p>
+					<h2>Web Types System</h2>
+					<p>To construct the page, Web browsers require multiple interactions with services. This often includes downloading images, stylesheets, and scripts. The requests can be triggered with tags like <code>&lt;script&gt;</code>, but, in the case of stylesheets, it is driven by a typed link:</p>
+					<pre><code class="language-markup">&lt;link rel="stylesheet" href="bootstrap.css"&gt;</code></pre>
+					<p>In addition to being a trigger for browser behavior, the <code>stylesheet</code> rel tells clients, "this URL serves CSS." It is a contract for behaviors on both sides of the transaction, and it's one of a <a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1">standard registry</a> which includes:</p>
+					<pre><code class="language-markup">&lt;link rel="icon" href="favicon.png" type="image/png"&gt;
+&lt;link rel="next" href="/article?page=2" title="Reltypes Are Awesome! (page 2)"&gt;
+&lt;link rel="prefetch" href="/img/bob.jpg"&gt;</code></pre>
+					<p>These <code>rel</code> attributes are called "reltypes." By adopting the browser's model of exchanging and searching through reltyped links, Web applications can achieve portability across services &ndash; a key requirement for the <a href="http://httplocal.com">HTTPLocal architecture</a>.</p>
+					<p><strong>Features of reltypes</strong>:</p>
+					<ul>
+						<li>They can be listed in groups to combine their behaviors.</li>
+						<li>Developers can publish custom reltype specs, then use the published URL as the reltype name.</li>
+						<li>Links are just key-value bags with <code>href</code>, <code>rel</code>, and any additional attributes set by the reltypes used. They're used most often in HTML <code>&lt;link&gt;</code> elements, but they also work in <code>Link</code> response headers and <a href="http://stateless.co/hal_specification.html">JSON-HAL</a> documents.</li>
+					</ul>
+					<h3>What is stdrel?</h3>
+					<p><a href="/">stdrel.com</a> is a library of common reltypes for developers to use in their APIs. It is currently in development, but will include detailed specs, examples, and libraries to get developers started. Pull requests are submitted and discussed at <a href="https://github.com/pfraze/stdrel.com">GitHub</a>.</p>
+					<br>
+					<div class="panel panel-default">
+						<div class="panel-heading"><h3 class="panel-title">How are the reltypes used?</h3></div>
+						<div class="panel-body">
+							<p>Reltypes can be used in any link, but they are often used in HTML <code>&lt;link&gt;</code> elements, <a href="http://stateless.co/hal_specification.html">JSON-HAL</a>, and in the <a href="http://tools.ietf.org/html/rfc5988">Link response header</a>. Here's a link to a user record that, using <code>GET</code>, <code>PUT</code>, and <code>DELETE</code>, can be fetched, updated, and deleted:</p>
+							<strong><small>HTML</small></strong><br>
+							<pre><code class="language-markup">&lt;link rel="schema.org/Person stdrel.com/crud-item" href="/users/bob" id="bob"&gt;</code></pre>
+							<strong><small>JSON-HAL</small></strong><br>
+							<pre><code class="language-javascript">{"_links": {"schema.org/Person stdrel.com/crud-item": {"href": "/users/bob", "id": "bob"} } }</code></pre>
+							<strong><small>Link header</small></strong><br>
+							<pre><code class="language-markup">Link: &lt;/users/bob&gt;; rel="schema.org/Person stdrel.com/crud-item"; id="bob"</code></pre>
+							<p>We know the schema of <code>/users/bob</code> because of <a href="http://schema.org/Person">schema.org/Person</a>, and we know the supported methods because of <a href="/crud-item">stdrel.com/crud-item</a>. Local.js includes a <a href="http://httplocal.com/docs.html#docs/en/0.6.2/api/querylinks.md">queryLinks</a> method for searching lists of links, and a <a href="http://httplocal.com/docs.html#docs/en/0.6.2/api/agent.md">User Agent</a> which navigates by querying service Link headers.</p>
+						</div>
+					</div>
 					<br><br>
 				</div>
 			</div>
