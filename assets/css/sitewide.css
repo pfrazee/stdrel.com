@@ -1,8 +1,7 @@
 html, body { height: 100%; }
 body { color: #555; font-family: 'Roboto', sans-serif; font-weight: 300; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; }
-pre, code { font-family: Consolas, "Courier New", monospace; color: #5E5E5E; background: none; border: 0; }
-code { background: #eee; }
+pre, code { font-family: Consolas, "Courier New", monospace; color: #5E5E5E; background: #f5f2f0; border: 0; }
 p { margin: 13px 0 17px; }
 p, li { font-size: 16px; line-height: 21px; }
 blockquote { border-left: 5px solid #ddd; }

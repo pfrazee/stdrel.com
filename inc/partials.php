@@ -12,6 +12,10 @@ namespace partials {
 		<link rel="stylesheet" href="/assets/prism/prism.css" />
 		<script src="/assets/prism/prism.js"></script>
 	<? }
+	function bootstrapjs() { ?>
+		<script src="/assets/js/jquery-2.1.0.min.js"></script>
+		<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+	<? }
 	function isactive($show) { if ($show): ?>class="active"<? endif; }
 }
 namespace com\stdrel\partials {

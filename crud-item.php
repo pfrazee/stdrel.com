@@ -21,6 +21,10 @@ host\links\setheader('crud-item');
 				<div class="content">
 					<h2>stdrel.com/crud-item <small>CRUD Item <strong>draft status - may change without notice</strong></small></h2>
 					<p>The resource is a item within a resource of type <a href="/crud-coll">stdrel.com/crud-coll</a>.</p>
+					<p><b class="glyphicon glyphicon-flag text-danger"></b> Links which export this type <strong>MUST</strong>:</p>
+					<ul>
+						<li>Include an <code>id</code> attribute labeling the identifier for the item within the collection.</li>
+					</ul>
 					<p><b class="glyphicon glyphicon-flag text-danger"></b> Resources which export this type <strong>MUST</strong>:</p>
 					<ul>
 						<li>In the <code>Link</code> response header, include a link of type <a href="/crud-coll">stdrel.com/crud-coll</a> to refer to the item's
