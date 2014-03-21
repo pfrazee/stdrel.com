@@ -9,19 +9,19 @@ blockquote p { font-size:14px }
 h2 { font-size:30px; }
 h3 { font-size:20px }
 
-.panel-default > .panel-heading { background: #e0e0e0; }
+.panel-default > .panel-heading { background: #f5f2f0; }
 
-#header { width: 100%; height: 100px; background: url(/assets/img/header.jpg); box-shadow: 0px 5px 15px rgba(0,0,0,0.25); }
+#header { width: 100%; height: 100px; }
 #header img { float: left; height: 80px; margin: 14px 5px 0; }
 #header h1 { margin-top: 0; padding: 42px 75px 0; }
 #header h1 a { font-weight: bold; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif }
-#header h1 small, #header h1 a { color: white; }
 
+#reltypes-nav { width: 200px; float: left; background: white; padding-bottom: 20px; margin-right: 10px; }
 #reltypes-nav ul { margin: 0; }
-#reltypes-nav ul li { margin: 20px; }
+#reltypes-nav ul li { margin: 10px 10px 0; }
 #reltypes-nav ul li.active { font-weight: bold; }
 
-#reltype h2 { background: #e0e0e0; padding: 5px 10px; border-radius: 3px; }
+#reltype h2 { background: #f5f2f0; padding: 5px 10px; border-radius: 3px; }
 #reltype h2 small { color: #777; }
 
 /*
