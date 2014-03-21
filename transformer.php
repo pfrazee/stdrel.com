@@ -43,6 +43,7 @@ host\links\setheader('transformer');
                 <div class="tab-pane active" id="express">
                   <p>Written with <a href="http://nodejs.org/">Node.js</a> and <a href="http://expressjs.com/">Express</a></p>
                   <pre><code class="language-javascript">var express = require('express');
+
 var app = express();
 app.all('/', function(req, res, next) {
     // Set headers
@@ -69,6 +70,7 @@ app.listen(3000);</code></pre>
                 <div class="tab-pane" id="local">
                   <p>Written with <a href="http://httplocal.com">Local.js</a></p>
                   <pre><code class="language-javascript">importScripts('/local.js');
+
 function main(req, res) {
     // Set headers
     res.header('Link', [{ href: '/', rel: 'self stdrel.com/transformer', title: 'To Uppercase' }]);
@@ -96,9 +98,10 @@ function main(req, res) {
                   <p>Written with <a href="https://github.com/pfraze/servware">Servware</a>, full definition</p>
                   <pre><code class="language-javascript">importScripts('/local.js');
 importScripts('/servware.js');
+
 var main = servware();
 main.route('/')
-    .link({ href: '/', rel: 'self stdrel.com/transformer', title: 'To Uppercase' });
+    .link({ href: '/', rel: 'self stdrel.com/transformer', title: 'To Uppercase' })
     .method('POST', {stream: true}, function(req, res) {
         req.assert({ type: 'text/plain', accept: 'text/plain' });
         res.writeHead(200, 'OK', {'Content-Type': 'text/plain'});
@@ -108,6 +111,7 @@ main.route('/')
                   <p>Using protocols</p>
                   <pre><code class="language-javascript">importScripts('/local.js');
 importScripts('/servware.js');
+
 var main = servware();
 main.route('/')
     .link({ href: '/', rel: 'self', title: 'To Uppercase' })
