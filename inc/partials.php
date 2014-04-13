@@ -44,7 +44,7 @@ namespace com\stdrel\partials {
 				<li>&middot;</li>
 				<li><a href="http://httplocal.com">HTTPLocal.com</a></li>
 				<li>&middot;</li>
-				<li>Submit pull requests at <a href="https://github.com/pfraze/stdrel.com">GitHub</a></li>
+				<li>Pull requests are welcome at <a href="https://github.com/pfraze/stdrel.com">GitHub</a></li>
 			</ul>
 		</div>
 	<? }
